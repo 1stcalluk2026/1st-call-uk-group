@@ -455,7 +455,7 @@ export default function GroupHome() {
                     <span className="text-base">📍</span> Nottingham Head Office, UK
                   </p>
                   <p className="flex items-center gap-3">
-                    <span className="text-base">✉️</span> james@1stcalluk.co.uk
+                    <span className="text-base">✉️</span> info@1stcalluk.com
                   </p>
                 </div>
               </div>

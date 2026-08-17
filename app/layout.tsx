@@ -36,6 +36,7 @@ export default function RootLayout({
     "url": "https://www.1stcalluk.co.uk",
     "logo": "https://www.1stcalluk.co.uk/logo.png",
     "description": "A premier professional services hub in Nottingham offering specialized expertise across multi-sector business practices.",
+    "email": "info@1stcalluk.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Nottingham",

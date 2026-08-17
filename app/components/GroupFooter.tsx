@@ -102,10 +102,10 @@ export default function GroupFooter() {
   <p className="mt-3 text-white/80 text-sm">
     Email:{" "}
     <a
-      href="mailto:info@1stcallukgroup.co.uk"
+      href="mailto:info@1stcalluk.com"
       className="hover:text-white transition"
     >
-      info@1stcallukgroup.co.uk
+      info@1stcalluk.com
     </a>
   </p>
 </div>

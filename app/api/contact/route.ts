@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { forwardPortalEnquiry, mapGroupService } from "../../../lib/forwardPortalEnquiry";
 
 export async function POST(request: Request) {
   try {
@@ -42,15 +43,16 @@ export async function POST(request: Request) {
     }
     
     const resend = new Resend(apiKey);
-    const emailFrom = process.env.EMAIL_FROM!;
+    const CONTACT_EMAIL = "info@1stcalluk.com";
+    const TEST_NOTIFY_EMAIL = "getu4ever@gmail.com";
+    const emailFrom = "1st Call UK <info@1stcalluk.com>";
 
     // 5. Send Admin Notification (Professional Lead Report)
-    await resend.emails.send({
+    const adminSubject = `New Centralized Group Enquiry: [${service}] from ${name}`;
+    const adminPayload = {
       from: emailFrom,
-      to: "central.admin@1stcalluk.co.uk",
-      bcc: "getu4ever@gmail.com", 
-      replyTo: email, 
-      subject: `New Centralized Group Enquiry: [${service}] from ${name}`,
+      replyTo: email,
+      subject: adminSubject,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; color: #333333;">
           <div style="background-color: #233a86; padding: 10px 20px; color: white; border-radius: 8px 8px 0 0;">
@@ -90,6 +92,16 @@ export async function POST(request: Request) {
           </div>
         </div>
       `.trim(),
+    };
+
+    await resend.emails.send({
+      ...adminPayload,
+      to: CONTACT_EMAIL,
+    });
+    await resend.emails.send({
+      ...adminPayload,
+      to: TEST_NOTIFY_EMAIL,
+      subject: `[Test copy] ${adminSubject}`,
     });
 
     // 6. Send Auto-Reply Confirmation back to client
@@ -137,13 +149,23 @@ export async function POST(request: Request) {
               <div class="details">
                 <strong>1st Call UK Group Operations Portal</strong><br>
                 Office Address: The Old Coach House, 25 Noel Street, Nottingham, NG7 6AQ<br>
-                Central Desk: central.admin@1stcalluk.co.uk
+                Central Desk: info@1stcalluk.com
               </div>
             </div>
           </div>
         </body>
         </html>
       `.trim(),
+    });
+
+    await forwardPortalEnquiry({
+      service: mapGroupService(service),
+      sourceSite: "1stcalluk.co.uk",
+      sourceKind: "contact",
+      sourceChannel: service,
+      name,
+      email,
+      message,
     });
 
     return NextResponse.json({ success: true });

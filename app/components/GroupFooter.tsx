@@ -28,12 +28,12 @@ export default function GroupFooter() {
              <p className="text-gray-400 text-xs mt-2">
             Website by –{" "}
             <a
-              href="https://www.karoldigital.co.uk/"
+              href="https://www.1stcalluk.website/"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-white transition"
             >
-              Karol Digital
+              1st Call UK Web &amp; Digital
             </a>
           </p>
           </div>
@@ -64,7 +64,7 @@ export default function GroupFooter() {
               </li>
               <li>
                 <a
-                  href="https://www.karoldigital.co.uk/"
+                  href="https://www.1stcalluk.website/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition"

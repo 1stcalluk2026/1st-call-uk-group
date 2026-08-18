@@ -7,7 +7,7 @@ export type AppDownloadSource = 'immigration' | 'financial' | 'web' | 'group'
 const HOST: Record<AppDownloadSource, string> = {
   immigration: '1stcalluk.com',
   financial: '1stcalluk.financial',
-  web: 'karoldigital.co.uk',
+  web: '1stcalluk.website',
   group: '1stcalluk.co.uk',
 }
 

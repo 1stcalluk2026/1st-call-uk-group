@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import DownloadAppButton from "./DownloadAppButton";
 
 export default function GroupHeader() {
   // Smooth scroll handler for standard internal anchor navigation
@@ -37,11 +38,22 @@ export default function GroupHeader() {
       `}</style>
 
       <header className="sticky top-0 z-50 text-white shadow-lg">
-        {/* TOP BAR WITH NEW INTERNAL ANCHOR NAVIGATION LINKS */}
+        <div className="bg-[#1a2d6b] border-b border-white/10">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 py-1.5 flex flex-wrap items-center justify-end gap-2 sm:gap-3">
+            <DownloadAppButton source="group" />
+            <a
+              href={`${process.env.NEXT_PUBLIC_PORTAL_URL?.replace(/\/$/, "") || "https://1st-calluk-portal.vercel.app"}/sign-in`}
+              className="inline-flex items-center rounded-full bg-white/10 text-white border border-white/30 px-4 py-1.5 text-xs font-medium hover:bg-white/20 transition-all duration-200"
+            >
+              Client portal
+            </a>
+          </div>
+        </div>
+
         <div className="bg-[#233a86]">
           <div className="max-w-7xl mx-auto px-4 md:px-6 py-2 flex justify-between items-center">
             <span className="text-xs text-white/80">1st Call UK Group</span>
-            <div className="flex gap-4 text-xs font-medium text-white/80 tracking-wide">
+            <div className="flex items-center gap-3 text-xs font-medium text-white/80 tracking-wide">
               <a href="#services" onClick={(e) => handleScroll(e, "services")} className="hover:text-white hover:underline transition-all">
                 Our Services
               </a>
@@ -107,7 +119,7 @@ export default function GroupHeader() {
 
             <p className="text-white/90 text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed">
               Professional services delivered through specialist teams in
-              immigration, financial services, and future growth sectors.
+              immigration, financial services, and web &amp; digital.
             </p>
           </div>
         </div>

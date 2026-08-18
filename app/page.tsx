@@ -144,7 +144,7 @@ export default function GroupHome() {
 
             <p className="text-gray-700 text-lg text-center max-w-3xl mx-auto mb-16 leading-relaxed">
               A corporate group of premier professional services based in Nottingham, delivering trusted
-              expertise in immigration, accounting, financial solutions, and future growth sectors. Each service within the 1st Call UK Group is delivered by a dedicated
+              expertise in immigration, accounting, financial solutions, and web &amp; digital. Each service within the 1st Call UK Group is delivered by a dedicated
               team of specialists focused on clarity, compliance, and results.
             </p>
           </div>
@@ -219,29 +219,36 @@ export default function GroupHome() {
                 </div>
               </div>
 
-              {/* FUTURE SERVICES CARD */}
-              <div className="bg-gray-100 rounded-2xl overflow-hidden border border-dashed border-gray-300 flex flex-col animate-slide-up opacity-0 delay-3">
+              {/* WEB & DIGITAL CARD */}
+              <div className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col animate-slide-up opacity-0 delay-3 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <div className="relative h-48">
                   <Image
-                    src="/coming-soon-card.jpg"
-                    alt="Future web design and digital marketing services"
+                    src="/web-digital-designer.webp"
+                    alt="Designer working on a website at 1st Call UK Web & Digital"
                     fill
-                    className="object-cover grayscale"
+                    className="object-cover"
                   />
                 </div>
 
                 <div className="p-8 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-gray-500 mb-3">
+                  <h3 className="text-xl font-bold text-[#233a86] mb-3">
                     Web & Digital Solutions
                   </h3>
 
-                  <p className="text-gray-500 leading-relaxed flex-grow">
-                    The 1st Call UK Group is expanding into technical engineering, high-performance web development, and digital marketing strategies to help businesses grow online.
+                  <p className="text-gray-700 leading-relaxed mb-6 flex-grow">
+                    The 1st Call UK Group builds high-performance websites and digital
+                    marketing strategies in-house through 1st Call UK Web &amp; Digital,
+                    to help businesses grow online.
                   </p>
 
-                  <span className="mt-6 inline-flex items-center justify-center py-3 rounded-lg bg-gray-300 text-gray-500 font-semibold cursor-not-allowed">
-                    Launching Soon
-                  </span>
+                  <a
+                    href="https://www.1stcalluk.website/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center bg-[#233a86] text-white font-semibold py-3 rounded-lg hover:bg-[#1e2f6f] transition-all duration-200"
+                  >
+                    Visit Web &amp; Digital →
+                  </a>
                 </div>
               </div>
 
@@ -486,6 +493,7 @@ export default function GroupHome() {
                         <option value="General">General Group Multi-Service Inquiry</option>
                         <option value="Immigration">UK Immigration & Visa Routing</option>
                         <option value="Financial">Accounting & HMRC Financial Management</option>
+                        <option value="Web & Digital">Web & Digital — 1st Call UK Web & Digital</option>
                       </select>
                     </div>
                     <div>

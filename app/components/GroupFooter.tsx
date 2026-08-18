@@ -1,5 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
+import DownloadAppButton from "./DownloadAppButton";
+import SisterCompanies from "./SisterCompanies";
 
 export default function GroupFooter() {
   return (
@@ -61,8 +62,15 @@ export default function GroupFooter() {
                   Financial Services
                 </a>
               </li>
-              <li className="opacity-60 cursor-not-allowed">
-                More Services (Coming Soon)
+              <li>
+                <a
+                  href="https://www.karoldigital.co.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition"
+                >
+                  Web & Digital Solutions
+                </a>
               </li>
             </ul>
           </div>
@@ -74,7 +82,7 @@ export default function GroupFooter() {
   <ul className="space-y-3 text-white/80 text-sm leading-relaxed">
     <li>
       Delivering trusted, regulated professional services through specialist
-      teams in immigration and financial advisory.
+      teams in immigration, financial advisory, and web &amp; digital.
     </li>
 
     <li>
@@ -108,12 +116,23 @@ export default function GroupFooter() {
       info@1stcalluk.com
     </a>
   </p>
+  <p className="mt-3">
+    <a
+      href={`${process.env.NEXT_PUBLIC_PORTAL_URL?.replace(/\/$/, "") || "https://1st-calluk-portal.vercel.app"}/sign-in`}
+      className="inline-flex items-center rounded-full bg-white/10 text-white border border-white/30 px-4 py-1.5 text-xs font-medium hover:bg-white/20 transition-all duration-200"
+    >
+      Client portal
+    </a>
+  </p>
+  <div className="mt-4">
+    <DownloadAppButton source="group" placement="footer" />
+  </div>
 </div>
                          
 
         </div>
 
-
+        <SisterCompanies site="group" />
       </div>
     </footer>
   );

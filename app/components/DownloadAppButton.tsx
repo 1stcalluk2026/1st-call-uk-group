@@ -1,35 +1,13 @@
 'use client'
 
 import { useEffect, useId, useRef, useState } from 'react'
+import {
+  downloadPageHref,
+  qrImageSrc,
+  type AppDownloadSource,
+} from '../lib/app-download'
 
-export type AppDownloadSource = 'immigration' | 'financial' | 'web' | 'group'
-
-const HOST: Record<AppDownloadSource, string> = {
-  immigration: '1stcalluk.com',
-  financial: '1stcalluk.financial',
-  web: '1stcalluk.website',
-  group: '1stcalluk.co.uk',
-}
-
-function portalOrigin() {
-  return (
-    process.env.NEXT_PUBLIC_PORTAL_URL?.trim().replace(/\/$/, '') ||
-    'https://1st-calluk-portal.vercel.app'
-  )
-}
-
-export function downloadPageHref(source: AppDownloadSource, medium: 'website' | 'qr' = 'website') {
-  const url = new URL('/download', portalOrigin())
-  url.searchParams.set('source', source)
-  url.searchParams.set('utm_source', HOST[source])
-  url.searchParams.set('utm_medium', medium)
-  url.searchParams.set('utm_campaign', 'app_download')
-  return url.toString()
-}
-
-function qrSrc(source: AppDownloadSource) {
-  return `${portalOrigin()}/api/download/qr?source=${source}`
-}
+export type { AppDownloadSource }
 
 type Placement = 'header' | 'footer' | 'nav'
 type Variant = 'navy' | 'gold'
@@ -46,8 +24,8 @@ export default function DownloadAppButton({
   const [open, setOpen] = useState(false)
   const rootRef = useRef<HTMLDivElement>(null)
   const labelId = useId()
-  const href = downloadPageHref(source)
-  const qr = qrSrc(source)
+  const href = downloadPageHref(source, placement === 'footer' ? 'qr' : 'website')
+  const qr = qrImageSrc(source)
   const gold = variant === 'gold'
 
   useEffect(() => {

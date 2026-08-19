@@ -73,13 +73,13 @@ export default function GroupHeader() {
 
             {/* LOGO - KEPT COMPLETELY STATIC WITH NO MOTION EFFECTS */}
             <Link href="/" className="block md:ml-6">
-              <div className="w-[280px] h-[110px] relative bg-white rounded-xl shadow-md border border-white/40 overflow-hidden">
+              <div className="relative h-[72px] w-[220px] overflow-hidden rounded-xl border border-white/40 bg-white shadow-md md:h-[80px] md:w-[240px]">
                 <Image
                   src="/1st-calluk-group-logo02.jpg"
                   alt="1st Call UK Group Logo"
                   fill
                   priority
-                  className="object-contain scale-[1.18]"
+                  className="object-contain"
                 />
               </div>
             </Link>

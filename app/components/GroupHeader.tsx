@@ -3,10 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import DownloadAppButton from "./DownloadAppButton";
-
-const PORTAL_ORIGIN = (
-  process.env.NEXT_PUBLIC_PORTAL_URL || "https://1st-calluk-portal-zeta.vercel.app"
-).replace(/\/$/, "");
+import { PORTAL_ORIGIN } from "../lib/app-download";
 
 export default function GroupHeader() {
   // Smooth scroll handler for standard internal anchor navigation

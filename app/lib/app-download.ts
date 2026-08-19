@@ -14,6 +14,8 @@ export const DOWNLOAD_QR_COLOR: Record<AppDownloadSource, string> = {
   group: "#233a86",
 };
 
+export const PORTAL_ORIGIN = "https://app.1stcalluk.co.uk";
+
 const DEFAULT_SOURCE: AppDownloadSource = "group";
 
 export function parseDownloadSource(value: string | null | undefined): AppDownloadSource {
@@ -33,7 +35,7 @@ export function downloadPageHref(
     utm_medium: medium,
     utm_campaign: "app_download",
   });
-  return `/download?${params.toString()}`;
+  return `${PORTAL_ORIGIN}/download?${params.toString()}`;
 }
 
 export function qrImageSrc(source: AppDownloadSource): string {
@@ -41,9 +43,6 @@ export function qrImageSrc(source: AppDownloadSource): string {
 }
 
 export function portalHref(source: AppDownloadSource): string {
-  const portal = (
-    process.env.NEXT_PUBLIC_PORTAL_URL || "https://1st-calluk-portal-zeta.vercel.app"
-  ).replace(/\/$/, "");
   const path =
     source === "immigration"
       ? "/immigration"
@@ -52,5 +51,5 @@ export function portalHref(source: AppDownloadSource): string {
         : source === "web"
           ? "/unlock?service=web"
           : "/sign-in";
-  return `${portal}${path}`;
+  return `${PORTAL_ORIGIN}${path}`;
 }

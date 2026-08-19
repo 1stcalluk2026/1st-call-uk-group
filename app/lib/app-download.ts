@@ -42,7 +42,7 @@ export function qrImageSrc(source: AppDownloadSource): string {
 
 export function portalHref(source: AppDownloadSource): string {
   const portal = (
-    process.env.NEXT_PUBLIC_PORTAL_URL || "https://1st-calluk-portal-1stcall-uk.vercel.app"
+    process.env.NEXT_PUBLIC_PORTAL_URL || "https://1st-calluk-portal-zeta.vercel.app"
   ).replace(/\/$/, "");
   const path =
     source === "immigration"

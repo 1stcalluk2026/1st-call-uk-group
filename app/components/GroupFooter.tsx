@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import DownloadAppButton from "./DownloadAppButton";
 import SisterCompanies from "./SisterCompanies";
 
@@ -108,6 +109,11 @@ export default function GroupFooter() {
   </p>
 
   <p className="mt-3 text-white/80 text-sm">
+    <Link href="/cookie-policy" className="hover:text-white underline underline-offset-2">
+      Cookie Policy
+    </Link>
+  </p>
+  <p className="mt-3 text-white/80 text-sm">
     Email:{" "}
     <a
       href="mailto:info@1stcalluk.com"
@@ -118,7 +124,7 @@ export default function GroupFooter() {
   </p>
   <p className="mt-3">
     <a
-      href={`${process.env.NEXT_PUBLIC_PORTAL_URL?.replace(/\/$/, "") || "https://1st-calluk-portal-1stcall-uk.vercel.app"}/sign-in`}
+      href={`${process.env.NEXT_PUBLIC_PORTAL_URL?.replace(/\/$/, "") || "https://1st-calluk-portal-zeta.vercel.app"}/sign-in`}
       className="inline-flex items-center rounded-full bg-white/10 text-white border border-white/30 px-4 py-1.5 text-xs font-medium hover:bg-white/20 transition-all duration-200"
     >
       Client portal

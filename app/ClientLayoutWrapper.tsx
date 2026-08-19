@@ -45,11 +45,6 @@ export default function ClientLayoutWrapper({
         policyHref="/cookie-policy"
       />
 
-      {/* COPYRIGHT BAR — FINAL ELEMENT */}
-      <div className="bg-black text-gray-400 text-center py-3 text-xs border-t border-gray-800">
-        © {new Date().getFullYear()} 1st Call UK Group. All rights reserved.
-      </div>
-
       {/* FLOATING SMOOTH SCROLL TO TOP ARROW BUTTON */}
       <button
         onClick={scrollToTop}

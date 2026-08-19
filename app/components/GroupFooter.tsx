@@ -5,7 +5,7 @@ import SisterCompanies from "./SisterCompanies";
 
 export default function GroupFooter() {
   return (
-    <footer className="bg-[#233a86] text-white mt-24">
+    <footer className="bg-[#2d459c] text-white mt-24">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-16">
 
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
@@ -26,17 +26,6 @@ export default function GroupFooter() {
               under one trusted organisation, supporting individuals and businesses
               across the UK.
             </p>
-             <p className="text-gray-400 text-xs mt-2">
-            Website by –{" "}
-            <a
-              href="https://www.1stcalluk.website/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-white transition"
-            >
-              1st Call UK Web &amp; Digital
-            </a>
-          </p>
           </div>
 
           {/* SERVICES */}
@@ -139,6 +128,23 @@ export default function GroupFooter() {
         </div>
 
         <SisterCompanies site="group" />
+      </div>
+
+      <div className="bg-[#233a86] text-white/60 py-4 text-xs">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 pr-20 sm:pr-24 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+          <p>© {new Date().getFullYear()} 1st Call UK Group. All rights reserved.</p>
+          <p className="sm:mr-8">
+            Website by{" "}
+            <a
+              href="https://www.1stcalluk.website/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-white transition"
+            >
+              1st Call UK Web &amp; Digital
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
